@@ -20,12 +20,15 @@ const App = () => {
         </div>
         {actresses.map(actress => {
           return (
-            <div className="col-4" key={actress['id']}>
-              <div className="d-flex">
+            <div className="col-4 my-4" key={actress['id']}>
+              <div className="card h-100">
                 <img src={actress['image']} alt={actress['name']} />
-                <div>
-                  <h4>{actress['name']}</h4>
-                  <p>{actress['biography']}</p>
+                <div className="card-body">
+                  <h3 className="card-title">{actress['name']}</h3>
+                  <span className="fs-5">Birth year: <strong>{actress['birth_year']}</strong></span>
+                  <p className="my-2 fs-5">Nationality: <strong>{actress['nationality']}</strong></p>
+                  <p className="my-2 fs-6">{actress['biography']}</p>
+                  <span className="fs-5">Awards: <strong>{actress['awards']}</strong></span>
                 </div>
               </div>
             </div>
