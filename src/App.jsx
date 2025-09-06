@@ -16,14 +16,21 @@ const App = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <div className="card mt-5">
-            <div className="card-body">
-              <div className="card-title"></div>
-              <div className="card-content"></div>
-            </div>
-          </div>
-          <button className="btn btn-primary" onClick={() => { carica() }}>Carica</button>
+          <button className="btn btn-primary" onClick={carica}>Carica</button>
         </div>
+        {actresses.map(actress => {
+          return (
+            <div className="col-4" key={actress['id']}>
+              <div className="d-flex">
+                <img src={actress['image']} alt={actress['name']} />
+                <div>
+                  <h4>{actress['name']}</h4>
+                  <p>{actress['biography']}</p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
